@@ -1,0 +1,56 @@
+/* Base dropdown styling */
+.s-header__nav ul li {
+  position: relative;
+}
+
+/* First-level dropdown */
+.s-header__nav ul li ul.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #37517e; /* adjust to your theme */
+  padding: 10px 0;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  z-index: 999;
+}
+
+/* Hover effect for first-level */
+.s-header__nav ul li:hover > ul.dropdown {
+  display: block;
+}
+
+/* Right-side dropdown */
+.s-header__nav ul li.has-dropdown-right ul.dropdown-right {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%; /* positions to the right */
+  background: #37517e;
+  padding: 10px 0;
+  min-width: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-radius: 8px;
+}
+
+/* Hover effect for right-side dropdown */
+.s-header__nav ul li.has-dropdown-right:hover > ul.dropdown-right {
+  display: block;
+}
+
+/* Match hover style for items */
+.s-header__nav ul li ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.s-header__nav ul li ul li a:hover {
+  background-color: #336699;
+  color: #fff;
+  border-radius: 5px;
+}

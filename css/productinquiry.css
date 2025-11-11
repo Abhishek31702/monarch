@@ -1,0 +1,103 @@
+.inquiry-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+        margin: 16px 0px;
+}
+
+.inquiry-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Form Elements */
+.inquiry-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.inquiry-form input,
+.inquiry-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.inquiry-form button {
+    width: 100%;
+    padding: 12px;
+    background: #37517e;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.inquiry-form button:hover {
+    background: black;
+}
+
+
+section.center-form {
+    display: flex;
+    justify-content: center;
+}
+
+section#contact {
+    padding: 0px 0px;
+}
+
+
+.products-section label {
+    margin-bottom: 6px;
+}
+.products-section input[type="checkbox"] {
+    margin-right: 6px;
+    transform: scale(1.2);
+}
+.products-section .form-group {
+    margin-bottom: 0;
+}
+.product-checkbox-section .checkbox-header {
+    font-size: 17px;
+    color: #3b5998;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+.product-checkbox-section input[type="checkbox"] {
+    margin-right: 6px;
+    transform: scale(1.2);
+}
+.product-checkbox-section .checkbox-group {
+    margin-bottom: 0;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .inquiry-form {
+        padding: 20px;
+    }
+
+    .inquiry-form input,
+    .inquiry-form select {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .inquiry-form button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,91 @@
+/* === Section Styling === */
+.support-section {
+  padding: 40px 20px;
+  background: #f9fafb;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+.support-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.support-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* === Table Wrapper (Scroll for Mobile) === */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto; /* Enable horizontal scroll */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  padding: 10px;
+}
+
+/* === Table Styling === */
+.support-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px; /* Force scroll on small screens */
+}
+
+.support-table th,
+.support-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border: 1px solid #e0e0e0;
+}
+
+.support-table th {
+  background-color: #336699 !important;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.support-table tr:nth-child(even) {
+  background-color: #f3f6fa;
+}
+
+.support-table tr:hover {
+  background-color: #e6f0ff;
+  transition: 0.3s ease;
+}
+
+/* === Responsive Tweaks === */
+@media (max-width: 992px) {
+  .support-table th,
+  .support-table td {
+    font-size: 0.9rem;
+    padding: 12px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .support-title {
+    font-size: 1.6rem;
+  }
+
+  .support-table {
+    min-width: 700px; /* Table will scroll horizontally */
+  }
+}
+
+@media (max-width: 480px) {
+  .support-section {
+    padding: 25px 10px;
+  }
+
+  .support-table th,
+  .support-table td {
+    font-size: 0.8rem;
+    padding: 8px 6px;
+  }
+}

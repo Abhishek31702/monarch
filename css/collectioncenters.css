@@ -1,0 +1,97 @@
+/* === Base Section Styling === */
+.locations-section {
+  padding: 40px 20px;
+  background: #f9fafb;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+.locations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.locations-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+/* === Table Wrapper for Horizontal Scroll === */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto; /* horizontal scroll on small screens */
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  padding: 10px;
+}
+
+/* === Table Styling === */
+.locations-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px; /* scroll appears if screen < 700px */
+}
+
+.locations-table th,
+.locations-table td {
+  padding: 14px 16px !important;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.locations-table th {
+  background-color: var(--color-1);
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.locations-table th.sr-no,
+.locations-table td.sr-no {
+  width: 60px; /* proper spacing for Sr. No column */
+}
+
+.locations-table tr:nth-child(even) {
+  background-color: #f3f6fa;
+}
+
+.locations-table tr:hover {
+  background-color: #e6f0ff;
+  transition: 0.3s ease;
+}
+
+/* === Responsive Styling === */
+@media (max-width: 992px) {
+  .locations-table th,
+  .locations-table td {
+    font-size: 0.85rem;
+    padding: 12px 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .locations-title {
+    font-size: 1.6rem;
+  }
+
+  .locations-table {
+    min-width: unset; /* allow table to shrink */
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .locations-section {
+    padding: 30px 10px;
+  }
+
+  .locations-table th,
+  .locations-table td {
+    font-size: 0.8rem;
+    padding: 8px 6px;
+  }
+}
