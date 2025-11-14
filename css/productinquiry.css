@@ -5,48 +5,48 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 500px;
-        margin: 16px 0px;
+    margin: 16px 0px;
 }
 
-.inquiry-form h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-    margin-top: 20px;
-}
+    .inquiry-form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+        margin-top: 20px;
+    }
 
-/* Form Elements */
-.inquiry-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
+    /* Form Elements */
+    .inquiry-form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
 
-.inquiry-form input,
-.inquiry-form select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-}
+    .inquiry-form input,
+    .inquiry-form select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+    }
 
-.inquiry-form button {
-    width: 100%;
-    padding: 12px;
-    background: #37517e;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s;
-}
+    .inquiry-form button {
+        width: 100%;
+        padding: 4px 12px;
+        background: #37517e;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s;
+    }
 
-.inquiry-form button:hover {
-    background: black;
-}
+        .inquiry-form button:hover {
+            background: black;
+        }
 
 
 section.center-form {
@@ -58,30 +58,317 @@ section#contact {
     padding: 0px 0px;
 }
 
+.center-form {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
 
-.products-section label {
-    margin-bottom: 6px;
+.inquiry-form {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
 }
-.products-section input[type="checkbox"] {
-    margin-right: 6px;
-    transform: scale(1.2);
+
+h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
-.products-section .form-group {
-    margin-bottom: 0;
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
 }
-.product-checkbox-section .checkbox-header {
-    font-size: 17px;
-    color: #3b5998;
-    font-weight: bold;
-    margin-bottom: 6px;
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
 }
-.product-checkbox-section input[type="checkbox"] {
-    margin-right: 6px;
-    transform: scale(1.2);
+
+    input:focus, select:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 5px rgba(37,99,235,0.3);
+    }
+
+/* Button */
+button {
+    width: 100%;
+    padding: 14px;
+    background: #2563eb;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
 }
-.product-checkbox-section .checkbox-group {
-    margin-bottom: 0;
+
+    button:hover {
+        background: #1d4ed8;
+    }
+
+/* Success + Error messages */
+.success, .error {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    display: none;
 }
+
+.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.center-form {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.inquiry-form {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+    input:focus, select:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 5px rgba(37,99,235,0.3);
+    }
+
+/* Button */
+button {
+    width: 100%;
+    padding: 14px;
+    background: #2563eb;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    button:hover {
+        background: #1d4ed8;
+    }
+
+/* Success + Error messages */
+.success, .error {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    display: none;
+}
+
+.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.center-form {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.inquiry-form {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+    input:focus, select:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 5px rgba(37,99,235,0.3);
+    }
+
+/* Button */
+button {
+    width: 100%;
+    padding: 14px;
+    background: #2563eb;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    button:hover {
+        background: #1d4ed8;
+    }
+
+/* Success + Error messages */
+.success, .error {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    display: none;
+}
+
+.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.center-form {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.inquiry-form {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+    input:focus, select:focus {
+        outline: none;
+        border-color: #2563eb;
+        box-shadow: 0 0 5px rgba(37,99,235,0.3);
+    }
+
+/* Button */
+button {
+    width: 100%;
+    padding: 14px;
+    background: #2563eb;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    button:hover {
+        background: #1d4ed8;
+    }
+
+/* Success + Error messages */
+.success, .error {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    display: none;
+}
+
+.success {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.error {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+
+
+
 
 
 /* Responsive Styles */
@@ -90,14 +377,14 @@ section#contact {
         padding: 20px;
     }
 
-    .inquiry-form input,
-    .inquiry-form select {
-        padding: 8px;
-        font-size: 0.9rem;
-    }
+        .inquiry-form input,
+        .inquiry-form select {
+            padding: 8px;
+            font-size: 0.9rem;
+        }
 
-    .inquiry-form button {
-        padding: 10px;
-        font-size: 14px;
-    }
+        .inquiry-form button {
+            padding: 10px;
+            font-size: 14px;
+        }
 }
