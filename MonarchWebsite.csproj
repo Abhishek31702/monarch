@@ -84,6 +84,7 @@
     <Content Include="css\support.css" />
     <Content Include="css\vendor.css" />
     <Content Include="customerinquiry.html" />
+    <Content Include="dealershipinquiry.aspx" />
     <Content Include="dealershipinquiry.html" />
     <Content Include="dodonts.html" />
     <Content Include="images\avatars\user-01.jpg" />
@@ -195,8 +196,10 @@
     <Content Include="images\wheel-1000.jpg" />
     <Content Include="images\wheel-2000.jpg" />
     <Content Include="images\wheel-500.jpg" />
+    <Content Include="index.aspx" />
     <Content Include="index.html" />
     <Content Include="js\common.js" />
+    <Content Include="js\dealershipinquiry.js" />
     <Content Include="js\fontawesome\all.min.js" />
     <Content Include="js\index.js" />
     <Content Include="js\jquery-3.2.1.min.js" />
@@ -209,17 +212,29 @@
     <Content Include="partials\ContactForm.aspx" />
     <Content Include="partials\footer.html" />
     <Content Include="partials\header.html" />
-    <Content Include="partials\wf.aspx" />
     <Content Include="readme.txt" />
     <Content Include="referral.html" />
     <Content Include="refund.html" />
     <Content Include="service.html" />
     <Content Include="styles.html" />
     <Content Include="support.html" />
-    <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dealershipinquiry.aspx.cs">
+      <DependentUpon>dealershipinquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dealershipinquiry.aspx.designer.cs">
+      <DependentUpon>dealershipinquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="partials\ContactForm.aspx.cs">
       <DependentUpon>ContactForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -227,31 +242,17 @@
     <Compile Include="partials\ContactForm.aspx.designer.cs">
       <DependentUpon>ContactForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="partials\wf.aspx.cs">
-      <DependentUpon>wf.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="partials\wf.aspx.designer.cs">
-      <DependentUpon>wf.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="README.md" />
     <Content Include="site.webmanifest" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
     </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>
