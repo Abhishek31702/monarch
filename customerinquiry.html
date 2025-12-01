@@ -81,57 +81,113 @@
     </section>
 
     <section class="center-form">
-      <form class="inquiry-form">
-        <h2>Customer Inquiry</h2>
+        <form class="inquiry-form" action="SaveInquiry.aspx>
+            <h2>Customer Inquiry</h2>
 
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" name="firstName" required />
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required />
 
-        <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" name="lastName" required />
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required />
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
 
-        <label for="country">Country</label>
-        <select id="country" name="country" required>
-          <option value="">Select Country</option>
-          <option value="USA">United States</option>
-          <option value="India">India</option>
-          <option value="UK">United Kingdom</option>
-          <option value="Canada">Canada</option>
-          <option value="Australia">Australia</option>
-          <!-- Add more countries here -->
-        </select>
+            <label for="country">Country</label>
+            <select id="country" name="country" required>
+                <option value="">Select Country</option>
+                <option value="USA">United States</option>
+                <option value="India">India</option>
+                <option value="UK">United Kingdom</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+                <!-- Add more countries here -->
+            </select>
 
-        <label for="state">State</label>
-        <select id="state" name="state" required>
-          <option value="">Select State</option>
-          <option value="California">California</option>
-          <option value="Texas">Texas</option>
-          <option value="Maharashtra">Maharashtra</option>
-          <option value="New York">New York</option>
-          <!-- Add more states here -->
-        </select>
+            <label for="state">State</label>
+            <select id="state" name="state" required>
+                <option value="">Select State</option>
+                <option value="California">California</option>
+                <option value="Texas">Texas</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="New York">New York</option>
+                <!-- Add more states here -->
+            </select>
 
-        <label for="city">City</label>
-        <input type="text" id="city" name="city" required />
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required />
 
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required />
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required />
 
-        <label for="contactMethod">Choose a Preferred Contact Method *</label>
-        <select id="contactMethod" name="contactMethod" required>
-          <option value="">Select Method</option>
-          <option value="phone_call">Phone Call</option>
-          <option value="email">Email</option>
-          <option value="whatsapp">WhatsApp</option>
-        </select>
-        
-        
+            <label for="contactMethod">Choose a Preferred Contact Method *</label>
+            <select id="contactMethod" name="contactMethod" required>
+                <option value="">Select Method</option>
+                <option value="phone_call">Phone Call</option>
+                <option value="email">Email</option>
+                <option value="whatsapp">WhatsApp</option>
+            </select>
+            <label>Video Products *</label>
+            <div class="checkbox-group">
 
-        <button type="submit">Submit</button>
-      </form>
+                <div class="checkbox-row">
+                    <label>Simba</label>
+                    <input type="checkbox" name="videoProducts" value="Simba">
+                </div>
+
+                <div class="checkbox-row">
+                    <label>Smart Cut Pro</label>
+                    <input type="checkbox" name="videoProducts" value="Smart Cut Pro">
+                </div>
+
+                <div class="checkbox-row">
+                    <label>Netmix</label>
+                    <input type="checkbox" name="videoProducts" value="Netmix">
+                </div>
+
+            </div>
+
+
+            <label>Broadcast Products *</label>
+            <div class="checkbox-group">
+
+                <div class="checkbox-row">
+                    <label>Virtiset Classic</label>
+                    <input type="checkbox" name="broadcastProducts" value="Virtiset Classic">
+                </div>
+
+                <div class="checkbox-row">
+                    <label>Virtiset Stream</label>
+                    <input type="checkbox" name="broadcastProducts" value="Virtiset Stream">
+                </div>
+
+                <div class="checkbox-row">
+                    <label>Virtiset WOW</label>
+                    <input type="checkbox" name="broadcastProducts" value="Virtiset WOW">
+                </div>
+
+                <div class="checkbox-row">
+                    <label>Emee Cast</label>
+                    <input type="checkbox" name="broadcastProducts" value="Emee Cast">
+                </div>
+
+                <div class="checkbox-row">
+                    <label>Ultra NRCS</label>
+                    <input type="checkbox" name="broadcastProducts" value="Ultra NRCS">
+                </div>
+
+                <div class="checkbox-row">
+                    <label>Election Graphic Services</label>
+                    <input type="checkbox" name="broadcastProducts" value="Election Graphic Services">
+                </div>
+
+            </div>
+
+
+
+
+            <button type="submit">Submit</button>
+        </form>
     </section>
 
     <div id="footer"></div>
@@ -141,5 +197,6 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script src="js/index.js"></script>
+      <script src="js/dealershipinquiry.js"></script>
   </body>
 </html>
