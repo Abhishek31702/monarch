@@ -83,6 +83,8 @@
     <Content Include="css\styles.css" />
     <Content Include="css\support.css" />
     <Content Include="css\vendor.css" />
+    <Content Include="js\customerinquiry.js" />
+    <Content Include="SaveCustomerInquiry.aspx" />
     <Content Include="customerinquiry.html" />
     <Content Include="dealershipinquiry.aspx" />
     <Content Include="dealershipinquiry.html" />
@@ -215,12 +217,20 @@
     <Content Include="readme.txt" />
     <Content Include="referral.html" />
     <Content Include="refund.html" />
+    <Content Include="SaveInquiry.aspx" />
     <Content Include="service.html" />
     <Content Include="styles.html" />
     <Content Include="support.html" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SaveCustomerInquiry.aspx.cs">
+      <DependentUpon>SaveCustomerInquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaveCustomerInquiry.aspx.designer.cs">
+      <DependentUpon>SaveCustomerInquiry.aspx</DependentUpon>
+    </Compile>
     <Compile Include="dealershipinquiry.aspx.cs">
       <DependentUpon>dealershipinquiry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -243,6 +253,13 @@
       <DependentUpon>ContactForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveInquiry.aspx.cs">
+      <DependentUpon>SaveInquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaveInquiry.aspx.designer.cs">
+      <DependentUpon>SaveInquiry.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

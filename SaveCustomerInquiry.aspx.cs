@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 
-public partial class SaveInquiry : System.Web.UI.Page
+public partial class SaveCustomerInquiry : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -27,6 +27,14 @@ public partial class SaveInquiry : System.Web.UI.Page
             string city = GetFormValue("city");
             string phone = GetFormValue("phone");
             string contactMethod = GetFormValue("contactMethod");
+
+            // MULTIPLE CHECKBOX VALUES
+            string videoProducts = Request.Form.GetValues("videoProducts") != null
+                ? string.Join(", ", Request.Form.GetValues("videoProducts"))
+                : "";
+            string broadcastProducts = Request.Form.GetValues("broadcastProducts") != null
+                ? string.Join(", ", Request.Form.GetValues("broadcastProducts"))
+                : "";
 
             // Validate required fields
             if (string.IsNullOrWhiteSpace(firstName) ||
@@ -65,7 +73,6 @@ public partial class SaveInquiry : System.Web.UI.Page
             }
 
             // Save to database
-            //string connectionString = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=monarch;Integrated Security=True";
             string conString = ConfigurationManager.ConnectionStrings["dbCon"].ConnectionString;
 
             if (string.IsNullOrEmpty(conString))
@@ -73,16 +80,17 @@ public partial class SaveInquiry : System.Web.UI.Page
                 SendResponse("ERROR: Database configuration error");
                 return;
             }
-            using (SqlConnection con = new SqlConnection(conString))
+
+            using (SqlConnection conn = new SqlConnection(conString))
             {
-                string query = @"INSERT INTO DealershipInquiry
+                string query = @"INSERT INTO CustomerInquiry
                                 (FirstName, LastName, Email, Country, State, City, Phone, 
-                                 ContactMethod, SubmittedDate, Status)
+                                 ContactMethod, VideoProducts, BroadcastProducts)
                                 VALUES
                                 (@FirstName, @LastName, @Email, @Country, @State, @City, @Phone, 
-                                 @ContactMethod, @SubmittedDate, @Status)";
+                                 @ContactMethod, @VideoProducts, @BroadcastProducts)";
 
-                SqlCommand cmd = new SqlCommand(query, con);
+                SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@FirstName", firstName);
                 cmd.Parameters.AddWithValue("@LastName", lastName);
                 cmd.Parameters.AddWithValue("@Email", email);
@@ -91,12 +99,12 @@ public partial class SaveInquiry : System.Web.UI.Page
                 cmd.Parameters.AddWithValue("@City", city);
                 cmd.Parameters.AddWithValue("@Phone", phone);
                 cmd.Parameters.AddWithValue("@ContactMethod", contactMethod);
-                cmd.Parameters.AddWithValue("@SubmittedDate", DateTime.Now);
-                cmd.Parameters.AddWithValue("@Status", "Pending");
+                cmd.Parameters.AddWithValue("@VideoProducts", videoProducts);
+                cmd.Parameters.AddWithValue("@BroadcastProducts", broadcastProducts);
 
-                con.Open();
+                conn.Open();
                 cmd.ExecuteNonQuery();
-                con.Close();
+                conn.Close();
             }
 
             SendResponse("SUCCESS"); // Clean response
