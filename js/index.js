@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+﻿document.addEventListener("DOMContentLoaded", function () {
   // -----------------------------
   // Contact Modal + Form Handling
   // -----------------------------
@@ -67,23 +67,68 @@ document.addEventListener("DOMContentLoaded", function () {
   // -----------------------------
   // Contact Form Submission
   // -----------------------------
-  document.addEventListener("submit", function (e) {
-    if (e.target && e.target.tagName === "FORM") {
-      const form = e.target;
-      if (form.closest("#contactModal")) {
-        e.preventDefault();
+    document.addEventListener("submit", function (e) {
+        const form = e.target;
+        if (form && form.closest("#contactModal")) {
+            e.preventDefault();
 
-        // You can add API submission logic here
-        alert("Form submitted successfully!");
-        
-        const modal = document.getElementById("contactModal");
-        if (modal) {
-          modal.style.display = "none";
-          document.body.style.overflow = "auto";
+            const data = new FormData(form);
+
+            fetch(form.action, {
+                method: "POST",
+                body: data,
+                credentials: "same-origin"
+            })
+                .then(response => response.text())
+                .then(text => {
+                    // Show success or error
+                    alert(text);
+
+                    if (text.toLowerCase().includes("thank")) {
+                        // Close modal and reset
+                        const modal = document.getElementById("contactModal");
+                        if (modal) {
+                            modal.style.display = "none";
+                            document.body.style.overflow = "auto";
+                        }
+                        form.reset();
+                    }
+                })
+                .catch(error => {
+                    alert("Something went wrong. Please try again later.");
+                    console.error(error);
+                });
         }
+    });
+});
 
-        form.reset();
-      }
-    }
-  });
+document.getElementById("contactForm").addEventListener("submit", async function (e) {
+    const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+    contactForm.addEventListener("submit", async function (e) {
+        e.preventDefault(); // Stop default submit behavior
+
+        const form = e.target;
+        const formData = new FormData(form);
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const result = await response.json();
+
+        const contactResult = document.getElementById("contactResult");
+        if (contactResult) {
+            contactResult.style.display = "block";
+            if (result.success) {
+                contactResult.innerHTML = "✅ Email sent successfully!";
+                form.reset();
+            } else {
+                contactResult.innerHTML = "❌ Failed: " + result.message;
+            }
+        }
+    });
+}
+
 });

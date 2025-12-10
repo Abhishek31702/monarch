@@ -1,22 +1,23 @@
-﻿// dealershipinquiry.js - Complete implementation
+﻿// customerinquiry.js - Complete implementation matching dealership form
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('dealershipinquiry.js loaded');
+    console.log('customerinquiry.js loaded');
 
-    const form = document.getElementById('dealershipForm');
+    const form = document.querySelector('.inquiry-form[action="SaveCustomerInquiry.aspx"]');
     const successMsg = document.getElementById('successMsg');
     const errorMsg = document.getElementById('errorMsg');
     const countryDropdown = document.getElementById('country');
     const stateDropdown = document.getElementById('state');
     const phoneInput = document.getElementById('phone');
 
-    // Check if dealership form exists on page
+    // Check if customer inquiry form exists on page
     if (!form || !countryDropdown || !stateDropdown) {
-        console.log('Dealership form not found on this page - skipping initialization');
+        console.log('Customer inquiry form not found on this page - skipping initialization');
         return;
     }
 
     let countriesData = [];
+    let isSubmitting = false; // Add submission flag to prevent duplicates
 
     // Load countries
     loadCountries();
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     }
 
-    // Populate states
+    // Populate states based on selected country
     countryDropdown.addEventListener("change", function () {
         const selectedCountry = this.value;
         if (!selectedCountry) {
@@ -88,9 +89,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Form submit
+    // Form submit - WITH DUPLICATE PREVENTION
     form.addEventListener("submit", function (e) {
         e.preventDefault();
+        e.stopPropagation();
+
+        // Prevent multiple submissions
+        if (isSubmitting) {
+            console.log('Already submitting, ignoring duplicate submission');
+            return;
+        }
+
+        console.log('Form submit triggered');
 
         successMsg.style.display = 'none';
         errorMsg.style.display = 'none';
@@ -100,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        // Validate phone number
         const phone = phoneInput.value.replace(/\D/g, '');
         if (phone.length < 10) {
             showError('Please enter a valid 10-digit phone number.');
@@ -107,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        // Validate email
         const emailInput = document.getElementById('email');
         if (!isValidEmail(emailInput.value)) {
             showError('Please enter a valid email address.');
@@ -114,6 +126,17 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        // Validate at least one product is selected (optional - remove if not needed)
+        const videoProducts = form.querySelectorAll('input[name="videoProducts"]:checked');
+        const broadcastProducts = form.querySelectorAll('input[name="broadcastProducts"]:checked');
+
+        // Uncomment below if you want to require at least one product selection
+        // if (videoProducts.length === 0 && broadcastProducts.length === 0) {
+        //     showError('Please select at least one product (Video or Broadcast).');
+        //     return;
+        // }
+
+        console.log('All validation passed, submitting form...');
         submitForm();
     });
 
@@ -122,6 +145,10 @@ document.addEventListener('DOMContentLoaded', function () {
         let isValid = true;
 
         inputs.forEach(input => {
+            if (input.type === 'checkbox' || input.type === 'radio') {
+                return; // Skip checkboxes for now, handled separately
+            }
+
             if (!input.value.trim()) {
                 input.classList.add('error-field');
                 isValid = false;
@@ -142,17 +169,24 @@ document.addEventListener('DOMContentLoaded', function () {
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
 
+        isSubmitting = true; // Set flag
         submitBtn.textContent = 'Submitting...';
         submitBtn.disabled = true;
 
         const formData = new FormData(form);
 
-        fetch('SaveInquiry.aspx', {
+        console.log('Sending data to SaveCustomerInquiry.aspx');
+
+        fetch('SaveCustomerInquiry.aspx', {
             method: 'POST',
             body: formData
         })
-            .then(res => res.text())
+            .then(res => {
+                console.log('Response received:', res.status);
+                return res.text();
+            })
             .then(result => {
+                console.log('Response text:', result);
                 result = result.trim();
 
                 if (result === 'SUCCESS') {
@@ -161,17 +195,24 @@ document.addEventListener('DOMContentLoaded', function () {
                     stateDropdown.innerHTML = '<option value="">Select a country first</option>';
                 } else if (result.startsWith('ERROR:')) {
                     showError(result.replace('ERROR:', '').trim());
+                } else if (result.includes('SUCCESS')) {
+                    // Sometimes the response might have extra whitespace or HTML
+                    showSuccess('Form submitted successfully! We will contact you soon.');
+                    form.reset();
+                    stateDropdown.innerHTML = '<option value="">Select a country first</option>';
                 } else {
-                    showError('An error occurred. Please try again.');
+                    console.error('Unexpected response:', result);
+                    showError('An error occurred. Please try again. Response: ' + result.substring(0, 100));
                 }
             })
             .catch(err => {
-                console.error(err);
+                console.error('Fetch error:', err);
                 showError('Network error. Please try again.');
             })
             .finally(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
+                isSubmitting = false; // Reset flag
             });
     }
 
@@ -190,6 +231,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Remove error highlight on input
     form.querySelectorAll('input, select').forEach(field => {
         field.addEventListener('input', function () {
+            this.classList.remove('error-field');
+        });
+        field.addEventListener('change', function () {
             this.classList.remove('error-field');
         });
     });
