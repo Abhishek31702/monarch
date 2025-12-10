@@ -1,53 +1,11 @@
-.inquiry-form {
-    background: #fff;
+/* ----------------------------------------------------
+   FORM WRAPPER
+---------------------------------------------------- */
+.center-form {
+    display: flex;
+    justify-content: center;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    max-width: 500px;
-    margin: 16px 0px;
 }
-
-    .inquiry-form h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        color: #333;
-        margin-top: 20px;
-    }
-
-    /* Form Elements */
-    .inquiry-form label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-
-    .inquiry-form input,
-    .inquiry-form select {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 15px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-        font-size: 1rem;
-    }
-
-    .inquiry-form button {
-        width: 100%;
-        padding: 4px 12px;
-        background: #37517e;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background 0.3s;
-    }
-
-        .inquiry-form button:hover {
-            background: black;
-        }
-
 
 section.center-form {
     display: flex;
@@ -55,323 +13,135 @@ section.center-form {
 }
 
 section#contact {
-    padding: 0px 0px;
+    padding: 0px;
 }
 
-.center-form {
-    display: flex;
-    justify-content: center;
-    padding: 30px;
-}
-
+/* ----------------------------------------------------
+   INQUIRY FORM
+---------------------------------------------------- */
 .inquiry-form {
     width: 100%;
     max-width: 500px;
     background: #ffffff;
-    padding: 25px;
+    padding: 30px;
+    margin: 50
+        npx 0px;
     border-radius: 14px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.08);
 }
 
-h2 {
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-label {
-    font-weight: 500;
-    margin-bottom: 5px;
-    display: block;
-}
-
-input, select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 18px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 15px;
-}
-
-    input:focus, select:focus {
-        outline: none;
-        border-color: #2563eb;
-        box-shadow: 0 0 5px rgba(37,99,235,0.3);
+    /* Form Heading */
+    .inquiry-form h2 {
+        text-align: center;
+        font-weight: 600;
+        margin: 20px 0;
+        color: #333;
     }
 
-/* Button */
-button {
-    width: 100%;
-    padding: 14px;
-    background: #2563eb;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-    button:hover {
-        background: #1d4ed8;
+    /* ----------------------------------------------------
+   FORM ELEMENTS
+---------------------------------------------------- */
+    .inquiry-form label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
     }
 
-/* Success + Error messages */
-.success, .error {
+    .inquiry-form input,
+    .inquiry-form select {
+        width: 100%;
+        padding: 12px;
+        margin: 5px;
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+        font-size: 15px;
+    }
+
+        .inquiry-form input:focus,
+        .inquiry-form select:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 5px rgba(37,99,235,0.3);
+        }
+
+    /* ----------------------------------------------------
+   BUTTON STYLE
+---------------------------------------------------- */
+    .inquiry-form button {
+        width: 100%;
+        padding: 5px;
+        background: #37517e;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+        .inquiry-form button:hover {
+            background: #1d4ed8;
+        }
+
+/* ----------------------------------------------------
+   SUCCESS + ERROR MESSAGES (CHECK CSS)
+---------------------------------------------------- */
+.success,
+.error {
     padding: 12px;
     margin-bottom: 15px;
     border-radius: 6px;
     display: none;
 }
 
+/* Success Message */
 .success {
     background: #d1fae5;
     color: #065f46;
 }
 
+/* Error Message */
 .error {
     background: #fee2e2;
     color: #991b1b;
 }
 
-.center-form {
-    display: flex;
-    justify-content: center;
-    padding: 30px;
-}
 
-.inquiry-form {
-    width: 100%;
-    max-width: 500px;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-}
-
-h2 {
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-label {
-    font-weight: 500;
-    margin-bottom: 5px;
-    display: block;
-}
-
-input, select {
-    width: 100%;
-    padding: 12px;
+/* Checkbox group wrapper */
+.checkbox-group {
     margin-bottom: 18px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 15px;
 }
 
-    input:focus, select:focus {
-        outline: none;
-        border-color: #2563eb;
-        box-shadow: 0 0 5px rgba(37,99,235,0.3);
-    }
-
-/* Button */
-button {
-    width: 100%;
-    padding: 14px;
-    background: #2563eb;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-    button:hover {
-        background: #1d4ed8;
-    }
-
-/* Success + Error messages */
-.success, .error {
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    display: none;
-}
-
-.success {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.error {
-    background: #fee2e2;
-    color: #991b1b;
-}
-
-.center-form {
+/* Each checkbox row */
+.checkbox-row {
     display: flex;
-    justify-content: center;
-    padding: 30px;
-}
-
-.inquiry-form {
-    width: 100%;
-    max-width: 500px;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-}
-
-h2 {
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-label {
-    font-weight: 500;
-    margin-bottom: 5px;
-    display: block;
-}
-
-input, select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 18px;
-    border: 1px solid #d1d5db;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 10px 14px;
     border-radius: 8px;
-    font-size: 15px;
+    margin-bottom: 8px;
+    border: 1px solid #e5e7eb;
 }
 
-    input:focus, select:focus {
-        outline: none;
-        border-color: #2563eb;
-        box-shadow: 0 0 5px rgba(37,99,235,0.3);
+    /* Checkbox text */
+    .checkbox-row label {
+        font-size: 15px;
+        font-weight: 500;
+        margin: 0;
     }
 
-/* Button */
-button {
-    width: 100%;
-    padding: 14px;
-    background: #2563eb;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-    button:hover {
-        background: #1d4ed8;
+    /* Checkbox input */
+    .checkbox-row input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
     }
 
-/* Success + Error messages */
-.success, .error {
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    display: none;
-}
 
-.success {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.error {
-    background: #fee2e2;
-    color: #991b1b;
-}
-
-.center-form {
-    display: flex;
-    justify-content: center;
-    padding: 30px;
-}
-
-.inquiry-form {
-    width: 100%;
-    max-width: 500px;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-}
-
-h2 {
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-label {
-    font-weight: 500;
-    margin-bottom: 5px;
-    display: block;
-}
-
-input, select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 18px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    font-size: 15px;
-}
-
-    input:focus, select:focus {
-        outline: none;
-        border-color: #2563eb;
-        box-shadow: 0 0 5px rgba(37,99,235,0.3);
-    }
-
-/* Button */
-button {
-    width: 100%;
-    padding: 14px;
-    background: #2563eb;
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-    button:hover {
-        background: #1d4ed8;
-    }
-
-/* Success + Error messages */
-.success, .error {
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 6px;
-    display: none;
-}
-
-.success {
-    background: #d1fae5;
-    color: #065f46;
-}
-
-.error {
-    background: #fee2e2;
-    color: #991b1b;
-}
-
-
-
-
-
-
-/* Responsive Styles */
+/* ----------------------------------------------------
+   RESPONSIVE MEDIA QUERY
+---------------------------------------------------- */
 @media (max-width: 600px) {
     .inquiry-form {
         padding: 20px;
@@ -379,12 +149,12 @@ button {
 
         .inquiry-form input,
         .inquiry-form select {
-            padding: 8px;
-            font-size: 0.9rem;
+            padding: 10px;
+            font-size: 14px;
         }
 
         .inquiry-form button {
-            padding: 10px;
+            padding: 12px;
             font-size: 14px;
         }
 }

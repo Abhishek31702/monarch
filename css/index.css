@@ -263,7 +263,8 @@ form textarea {
 }
 
 a#openModalBtn {
-  border-radius: 0;
+    border-radius: 0;
+    color: white !important;
 }
 
 .dropdown {
@@ -400,8 +401,9 @@ a.modal-popup__details {
 }
 
 .s-contact a {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 14px;
+    color: rgba(255, 255, 255, 0.4) !important;
+    font-size: 14px;
+    background: transparent;
 }
 
 
@@ -504,6 +506,16 @@ header.s-header.sticky.offset.scrolling {
     width: 95%;
     padding: 0px;
   }
+/*    header.s-header.sticky.offset.scrolling {
+        background: transparent;
+        height: 100%;
+    }
+    .s-header .row {
+        height: 100%;
+    }
+    nav.s-header__nav.mobile {
+        height: 100%;
+    }*/
 }
 
 
